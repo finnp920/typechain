@@ -1,25 +1,26 @@
-class Human {
-  public name: string;
-  private age: number;
-  public gender: string;
+class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
 
-  constructor(name: string, age: number, gender: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-  }
-
-  getAge() {
-    return this.age;
+  constructor(index: number, hash: string, previousHash: string, data: string, timestamp: number) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
   }
 }
 
-const finn = new Human("Finn", 33, "female")
+const genesisBlock: Block = new Block(0, "2020202", "", "hello", 1234567);
 
-const sayHi = (person: Human): string => {
-  return `Hello ${person.name}, you are ${person.getAge()}, you are a ${person.gender}!`;
-}
+let blockchain: [Block] = [genesisBlock];
 
-console.log(sayHi(finn));
+// [error] Argument of type 'string' is not assignable to parameter of type 'Block'.
+// blockchain.push("dddd")
+
+console.log(blockchain);
 
 export {};
