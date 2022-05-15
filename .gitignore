@@ -56,7 +56,10 @@ typings/
 
 # dotenv environment variables file
 .env
-dist
 
-#mac
+# build
+dist
+build
+
+# mac
 .DS_Store
